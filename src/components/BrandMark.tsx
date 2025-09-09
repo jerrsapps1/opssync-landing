@@ -1,6 +1,4 @@
 // src/components/BrandMark.tsx
-// Animated, perfectly-centered radar + shield + thinner check.
-// Use: <BrandMark size={80} />
 export default function BrandMark({ size = 96 }: { size?: number }) {
   return (
     <svg
@@ -13,31 +11,18 @@ export default function BrandMark({ size = 96 }: { size?: number }) {
       focusable="false"
     >
       <defs>
-        {/* Background gradient (used only if you embed the whole tile) */}
-        <linearGradient id="bg" x1="28" y1="20" x2="228" y2="236" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#0D2A78" />
-          <stop offset="1" stopColor="#5E31F6" />
-        </linearGradient>
-
-        {/* Ambient radar glow */}
         <radialGradient id="radGlow" cx="0" cy="0" r="96" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#0EA5E9" stopOpacity=".25" />
           <stop offset="1" stopColor="#06B6D4" stopOpacity="0" />
         </radialGradient>
-
-        {/* Ring stroke gradient */}
         <linearGradient id="ring" x1="-64" y1="-64" x2="64" y2="64" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#68D6FF" />
           <stop offset="1" stopColor="#6FEAD8" />
         </linearGradient>
-
-        {/* Sweep wedge gradient (bright → transparent) */}
         <linearGradient id="sweepGrad" x1="0" y1="0" x2="90" y2="0" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#68D6FF" stopOpacity=".9" />
           <stop offset="1" stopColor="#68D6FF" stopOpacity="0" />
         </linearGradient>
-
-        {/* Shield fill + stroke */}
         <linearGradient id="shieldFill" x1="-40" y1="-64" x2="40" y2="90" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#0ECF9A" />
           <stop offset="1" stopColor="#079269" />
@@ -46,50 +31,34 @@ export default function BrandMark({ size = 96 }: { size?: number }) {
           <stop offset="0" stopColor="#39E2B4" />
           <stop offset="1" stopColor="#17B58A" />
         </linearGradient>
-
-        {/* Soft shield glow */}
         <filter id="shieldGlow" x="-40%" y="-40%" width="180%" height="180%">
           <feGaussianBlur stdDeviation="14" />
         </filter>
       </defs>
 
-      {/* If you want the rounded square background, uncomment this: */}
-      {/* <rect x="2" y="2" width="252" height="252" rx="56" fill="url(#bg)" /> */}
-
-      {/* Draw everything around the exact center (0,0) */}
       <g transform="translate(128 128)">
-        {/* Ambient glow */}
         <circle r="96" fill="url(#radGlow)" />
 
-        {/* Shield (centered) */}
         <ellipse rx="86" ry="60" fill="#12D1A0" opacity=".35" filter="url(#shieldGlow)" />
         <path
-          d="M 0 -76 L 64 -40 V 24
-             C 64 52 36 76 0 90
-             C -36 76 -64 52 -64 24
-             V -40 Z"
+          d="M 0 -76 L 64 -40 V 24 C 64 52 36 76 0 90 C -36 76 -64 52 -64 24 V -40 Z"
           fill="url(#shieldFill)"
           opacity=".9"
         />
         <path
-          d="M 0 -76 L 64 -40 V 24
-             C 64 52 36 76 0 90
-             C -36 76 -64 52 -64 24
-             V -40 Z"
+          d="M 0 -76 L 64 -40 V 24 C 64 52 36 76 0 90 C -36 76 -64 52 -64 24 V -40 Z"
           fill="none"
           stroke="url(#shieldStroke)"
           strokeWidth={8}
           opacity=".95"
         />
 
-        {/* Radar rings */}
         <g fill="none" stroke="url(#ring)" strokeOpacity=".9">
           <circle r="64" strokeWidth={4} />
           <circle r="44" strokeWidth={3} />
           <circle r="24" strokeWidth={2.5} />
         </g>
 
-        {/* Rotating sweep (animate both wedge + edge) */}
         <g>
           <g>
             <path d="M0 0 L90 0 L90 10 L0 0 Z" fill="url(#sweepGrad)" opacity=".75" />
@@ -98,7 +67,6 @@ export default function BrandMark({ size = 96 }: { size?: number }) {
           </g>
         </g>
 
-        {/* Thinner check so radar stays visible */}
         <path
           d="M -36 10 L -6 40 L 44 -16"
           fill="none"
