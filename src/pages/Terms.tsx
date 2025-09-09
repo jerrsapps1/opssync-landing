@@ -9,8 +9,9 @@ export default function Terms() {
 
       <div className="card p-6 space-y-4">
         <p className="muted">
-          These Terms govern your access to and use of OpsSync.ai’s Crew &amp; Equipment Board (the “Service”). By using the Service, you agree to these Terms.
-          If you are agreeing on behalf of an organization, you represent you have authority to bind it.
+          These Terms govern your access to and use of OpsSync.ai’s Crew &amp; Equipment Board (the “Service”).
+          By using the Service, you agree to these Terms. If you are agreeing on behalf of an organization,
+          you represent you have authority to bind it.
         </p>
 
         <h2 className="text-xl font-semibold">1. Accounts &amp; Access</h2>
@@ -28,8 +29,8 @@ export default function Terms() {
 
         <h2 className="text-xl font-semibold">3. Your Content</h2>
         <p className="muted">
-          You retain ownership of content you submit. You grant OpsSync.ai a limited license to host, process, and display that content
-          solely to provide the Service to you.
+          You retain ownership of content you submit. You grant OpsSync.ai a limited license to host, process,
+          and display that content solely to provide the Service to you.
         </p>
 
         <h2 className="text-xl font-semibold">4. Plans &amp; Billing</h2>
@@ -40,19 +41,22 @@ export default function Terms() {
 
         <h2 className="text-xl font-semibold">5. Confidentiality &amp; Security</h2>
         <p className="muted">
-          We implement reasonable administrative, technical, and physical safeguards to protect your content. See our Privacy Policy for details.
+          We implement reasonable administrative, technical, and physical safeguards to protect your content.
+          See our Privacy Policy for details.
         </p>
 
         <h2 className="text-xl font-semibold">6. Service Changes</h2>
         <p className="muted">
-          We may update or discontinue features from time to time. If a change materially reduces core board functionality for a paid plan, we will provide notice.
+          We may update or discontinue features from time to time. If a change materially reduces core board
+          functionality for a paid plan, we will provide notice.
         </p>
 
         <h2 className="text-xl font-semibold">7. Disclaimers</h2>
         <p className="muted">
-          THE SERVICE IS PROVIDED “AS IS.” To the fullest extent permitted by law, we disclaim warranties of merchantability, fitness for a particular purpose,
-          and non-infringement. You are responsible for how you use outputs and exports.
+          THE SERVICE IS PROVIDED “AS IS.” To the fullest extent permitted by law, we disclaim warranties of
+          merchantability, fitness for a particular purpose, and non-infringement. You are responsible for how
+          you use outputs and exports.
         </p>
 
         <h2 className="text-xl font-semibold">8. Limitation of Liability</h2>
-        <p classNa
+        <p className=
