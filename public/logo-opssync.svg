@@ -1,0 +1,38 @@
+<!-- public/logo-opssync.svg -->
+<svg width="260" height="48" viewBox="0 0 260 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Text gradient (blue → teal) -->
+    <linearGradient id="gradText" x1="0" y1="0" x2="260" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Soft blue/teal glow behind the wordmark -->
+    <filter id="softGlow" x="-20%" y="-60%" width="140%" height="220%" filterUnits="objectBoundingBox">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+    </filter>
+
+    <!-- Subtle outline that reads on both light & dark -->
+    <linearGradient id="gradStroke" x1="0" y1="0" x2="260" y2="0">
+      <stop offset="0" stop-color="#063B57" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#064E51" stop-opacity=".25"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background glows (don’t cover the whole canvas; look good on any page bg) -->
+  <g filter="url(#softGlow)" opacity=".65">
+    <ellipse cx="88" cy="28" rx="80" ry="26" fill="#0EA5E9"/>
+    <ellipse cx="190" cy="28" rx="82" ry="26" fill="#06B6D4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+     font-size="28" font-weight="800" letter-spacing="0">
+    <!-- Stroke for legibility -->
+    <text x="10" y="34" fill="none" stroke="url(#gradStroke)" stroke-width="1.1">OpsSync.ai</text>
+    <!-- Gradient fill -->
+    <text x="10" y="34" fill="url(#gradText)">OpsSync.ai</text>
+  </g>
+
+  <!-- Trimmed viewBox padding -->
+</svg>
