@@ -1,50 +1,38 @@
-// src/pages/Home.tsx
 import BrandMark from "@/components/BrandMark";
 
 export default function Home() {
   return (
     <section className="relative overflow-hidden">
-      {/* gradient background */}
       <div className="absolute inset-0 -z-10 bg-brand-gradient" />
-
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* Text column */}
           <div>
-            {/* Brand badge with animated mark */}
             <div className="flex items-center gap-3">
               <BrandMark size={48} />
               <span className="inline-block rounded-full border px-3 py-1 text-xs font-medium text-sky-700 border-sky-200 bg-white dark:bg-slate-900 dark:text-sky-300 dark:border-slate-700">
-                New • Ops dashboards for crews &amp; payroll
+                New • Crew &amp; Equipment Board
               </span>
             </div>
 
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-              Run construction ops <span className="text-brand-500">in sync</span>.
+              Organize crews &amp; equipment <span className="text-brand-500">at a glance</span>.
             </h1>
             <p className="mt-4 text-lg muted">
-              OpsSync.ai keeps employees, equipment, timecards, and payroll aligned—so you finish jobs faster and bill cleanly.
+              Drag-and-drop board to assign people and machines, track availability &amp; certifications, avoid conflicts, and export daily plans.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="/pricing"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-brand-500 hover:bg-brand-600 transition ring-focus"
-              >
+              <a href="/pricing" className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-brand-500 hover:bg-brand-600 transition ring-focus">
                 Get started
               </a>
-              <a
-                href="/features"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 ring-focus"
-              >
+              <a href="/features" className="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 ring-focus">
                 See features
               </a>
             </div>
 
-            <p className="mt-3 text-sm muted">No cards or certificates here—pure ops &amp; payroll alignment.</p>
+            <p className="mt-3 text-sm muted">Built for construction &amp; demo operations.</p>
           </div>
 
-          {/* Mock UI card */}
           <div className="relative">
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between">
@@ -58,18 +46,18 @@ export default function Home() {
               <div className="mt-4 grid grid-cols-3 gap-3">
                 <div className="card card-hover p-3">
                   <div className="h-24 rounded bg-slate-50 dark:bg-slate-800" />
-                  <p className="mt-2 text-sm font-medium">Employee Board</p>
-                  <p className="text-xs muted">Drag &amp; drop crews</p>
+                  <p className="mt-2 text-sm font-medium">Drag &amp; Drop</p>
+                  <p className="text-xs muted">Visual day board</p>
                 </div>
                 <div className="card card-hover p-3">
                   <div className="h-24 rounded bg-slate-50 dark:bg-slate-800" />
-                  <p className="mt-2 text-sm font-medium">Timekeeping</p>
-                  <p className="text-xs muted">Supervisor punches</p>
+                  <p className="mt-2 text-sm font-medium">Filters</p>
+                  <p className="text-xs muted">Trade, certs, availability</p>
                 </div>
                 <div className="card card-hover p-3">
                   <div className="h-24 rounded bg-slate-50 dark:bg-slate-800" />
-                  <p className="mt-2 text-sm font-medium">Payroll Ready</p>
-                  <p className="text-xs muted">Foundation-friendly</p>
+                  <p className="mt-2 text-sm font-medium">Exports</p>
+                  <p className="text-xs muted">PDF &amp; CSV snapshots</p>
                 </div>
               </div>
             </div>

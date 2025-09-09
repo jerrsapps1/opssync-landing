@@ -1,4 +1,3 @@
-// src/pages/About.tsx
 export default function About() {
   return (
     <section className="relative">
@@ -7,49 +6,42 @@ export default function About() {
         <header className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight">About OpsSync.ai</h1>
           <p className="mt-3 text-lg muted">
-            We’re builders from the field—streamlining operations so your crews can work, not wrestle software.
+            We build practical tools for dispatchers, supers, and the yard—so planning the day is fast and clear.
           </p>
         </header>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="card p-6">
-            <h2 className="text-xl font-semibold">Our Mission</h2>
+            <h2 className="text-xl font-semibold">Our Focus</h2>
             <p className="mt-2 muted">
-              Make timekeeping, equipment assignment, and payroll alignment effortless for construction and demolition teams—
-              so projects run on schedule and margins stay healthy.
+              A single source of truth for crews and equipment. Visual planning, useful filters, and clean exports—without the bloat.
             </p>
-            <ul className="mt-4 list-disc pl-5 muted space-y-1">
-              <li>Practical workflows built from real jobsite pain points</li>
-              <li>Clean data out, payroll-ready formats</li>
-              <li>A foundation for insights—not just another timesheet</li>
-            </ul>
           </div>
 
           <div className="card p-6">
-            <h2 className="text-xl font-semibold">What Makes Us Different</h2>
-            <p className="mt-2 muted">OpsSync.ai isn’t bloated ERP—it’s focused tooling for the field and the back office.</p>
-            <ul className="mt-4 list-disc pl-5 muted space-y-1">
-              <li>Supervisor-first time capture</li>
-              <li>Board view for people &amp; machines</li>
-              <li>Exports tailored for Foundation Bookkeeping</li>
+            <h2 className="text-xl font-semibold">What We Value</h2>
+            <ul className="mt-2 list-disc pl-5 muted space-y-1">
+              <li>Speed over complexity</li>
+              <li>Clarity during morning huddles</li>
+              <li>Exportable plans the whole org can use</li>
             </ul>
           </div>
         </div>
 
         <div className="card p-6">
-          <h2 className="text-xl font-semibold">Roadmap Highlights</h2>
+          <h2 className="text-xl font-semibold">Roadmap</h2>
           <div className="mt-4 space-y-4 muted">
             <div>
-              <div className="font-medium">Q3 — Core launch</div>
-              <div>Board, timekeeping, payroll exports, basic insights</div>
+              <div className="font-medium">Q3 — Board Launch</div>
+              <div>Drag-and-drop day board, filters, conflicts, PDF/CSV exports</div>
             </div>
             <div>
-              <div className="font-medium">Q4 — Multi-tenant &amp; white-label</div>
-              <div>Org roles, custom branding, refined reports</div>
+              <div className="font-medium">Q4 — Saved Views &amp; Templates</div>
+              <div>Personal/shared views, board templates, week view</div>
             </div>
             <div>
-              <div className="font-medium">Q1 — Deeper analytics</div>
-              <div>Idle time detection, variance alerts, productivity trends</div>
+              <div className="font-medium">Q1 — Utilization &amp; Alerts</div>
+              <div>Deeper utilization, conflict badges, optional daily email</div>
             </div>
           </div>
         </div>

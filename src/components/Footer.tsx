@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="sr-only">OpsSync.ai</span>
           </Link>
           <p className="mt-3 text-sm muted">
-            Operations & payroll in sync for construction and demolition teams.
+            Crew & equipment board for construction and demolition teams.
           </p>
         </div>
 
