@@ -1,85 +1,160 @@
-import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import DarkModeToggle from "./DarkModeToggle";
+import { Link, NavLink } from "react-router-dom";
 import logoUrl from "/logo-opssync.svg";
-
-const nav = [
-  { to: "/features", label: "Features" },
-  { to: "/pricing",  label: "Pricing"  },
-  { to: "/about",    label: "About"    },
-  { to: "/resources",label: "Resources"},
-  { to: "/contact",  label: "Contact"  },
-];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const linkBase =
+    "block px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800/60 dark:hover:text-white";
+  const active =
+    "text-slate-900 bg-slate-100 dark:text-white dark:bg-slate-800/60";
+  const inactive = "text-slate-600 dark:text-slate-300";
+
   return (
-    <header className="sticky top-0 z-30 border-b dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-6 py-3">
-        <Link to="/" className="flex items-center gap-2">
+    <nav className="sticky top-0 z-40 border-b bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-3">
           <img src={logoUrl} alt="OpsSync.ai" className="h-7 w-auto" />
-          <span className="sr-only">OpsSync.ai</span>
+          <div className="leading-tight">
+            <div className="text-base font-extrabold tracking-tight">
+              OpsSync <span className="text-brand-500">Board</span>
+            </div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 -mt-0.5">
+              Crew &amp; Equipment Board
+            </div>
+          </div>
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-5 text-slate-700 dark:text-slate-300 md:flex">
-          {nav.map(({to,label}) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({isActive}) =>
-                `hover:text-slate-900 dark:hover:text-white transition ${isActive ? "text-slate-900 dark:text-white" : ""}`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-          <DarkModeToggle />
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-2 md:flex">
+          <NavLink
+            to="/features"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? active : inactive}`
+            }
+          >
+            Features
+          </NavLink>
+          <NavLink
+            to="/pricing"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? active : inactive}`
+            }
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            to="/resources"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? active : inactive}`
+            }
+          >
+            Resources
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? active : inactive}`
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? active : inactive}`
+            }
+          >
+            Contact
+          </NavLink>
+
           <Link
             to="/pricing"
-            className="rounded-xl bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-600 transition"
+            className="ml-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-600"
           >
-            Start
+            Get started
           </Link>
-        </nav>
+        </div>
 
+        {/* Mobile menu button */}
         <button
-          className="ml-auto inline-flex items-center rounded-lg border px-3 py-2 text-slate-700 dark:text-slate-200 md:hidden dark:border-slate-600"
-          onClick={() => setOpen(v => !v)}
+          className="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
           aria-label="Toggle menu"
-        >☰</button>
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
       </div>
 
+      {/* Mobile panel */}
       {open && (
-        <div className="border-t dark:border-slate-700 bg-white dark:bg-slate-900 md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-3">
-            {nav.map(({to,label}) => (
-              <NavLink
-                key={to}
-                to={to}
-                onClick={() => setOpen(false)}
-                className={({isActive}) =>
-                  `rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800 ${
-                    isActive ? "bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white" : "text-slate-700 dark:text-slate-300"
-                  }`
-                }
-              >
-                {label}
-              </NavLink>
-            ))}
-            <div className="mt-2 flex items-center justify-between">
-              <DarkModeToggle />
-              <Link
-                to="/pricing"
-                onClick={() => setOpen(false)}
-                className="rounded-xl bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-600 transition"
-              >
-                Start
-              </Link>
-            </div>
-          </nav>
+        <div className="border-t bg-white/80 px-4 py-3 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 md:hidden">
+          <div className="grid gap-1">
+            <NavLink
+              to="/features"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? active : inactive}`
+              }
+            >
+              Features
+            </NavLink>
+            <NavLink
+              to="/pricing"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? active : inactive}`
+              }
+            >
+              Pricing
+            </NavLink>
+            <NavLink
+              to="/resources"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? active : inactive}`
+              }
+            >
+              Resources
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? active : inactive}`
+              }
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `${linkBase} ${isActive ? active : inactive}`
+              }
+            >
+              Contact
+            </NavLink>
+            <Link
+              to="/pricing"
+              onClick={() => setOpen(false)}
+              className="mt-1 rounded-xl bg-brand-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-600"
+            >
+              Get started
+            </Link>
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }

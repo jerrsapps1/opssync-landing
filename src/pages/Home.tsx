@@ -10,15 +10,16 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <BrandMark size={48} />
               <span className="inline-block rounded-full border px-3 py-1 text-xs font-medium text-sky-700 border-sky-200 bg-white dark:bg-slate-900 dark:text-sky-300 dark:border-slate-700">
-                New • Crew &amp; Equipment Board
+                OpsSync Board • New
               </span>
             </div>
 
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-              Organize crews &amp; equipment <span className="text-brand-500">at a glance</span>.
+              Plan crews &amp; equipment <span className="text-brand-500">in minutes</span>.
             </h1>
             <p className="mt-4 text-lg muted">
-              Drag-and-drop board to assign people and machines, track availability &amp; certifications, avoid conflicts, and export daily plans.
+              A focused board for people &amp; machines—drag, drop, filter, and export the daily plan. Built for
+              construction &amp; demo operations.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -30,7 +31,7 @@ export default function Home() {
               </a>
             </div>
 
-            <p className="mt-3 text-sm muted">Built for construction &amp; demo operations.</p>
+            <p className="mt-3 text-sm muted">No timekeeping, no payroll—just clean dispatch.</p>
           </div>
 
           <div className="relative">
