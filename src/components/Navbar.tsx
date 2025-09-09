@@ -1,26 +1,84 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+
+const navItems = [
+  { to: "/features", label: "Features" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/about", label: "About" },
+  { to: "/resources", label: "Resources" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
-      <div className="container-page h-16 flex items-center justify-between">
-        <NavLink to="/" className="text-2xl font-extrabold">
-          <span className="text-gradient">OpsSync.ai</span>
-        </NavLink>
+  const [open, setOpen] = useState(false);
 
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <NavLink to="/features" className="hover:opacity-80">Features</NavLink>
-          <NavLink to="/pricing" className="hover:opacity-80">Pricing</NavLink>
-          <NavLink to="/resources" className="hover:opacity-80">Resources</NavLink>
-          <NavLink to="/about" className="hover:opacity-80">About</NavLink>
-          <NavLink to="/contact" className="hover:opacity-80">Contact</NavLink>
+  return (
+    <header className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center gap-4 px-6 py-3">
+        {/* Brand */}
+        <Link to="/" className="shrink-0 text-lg font-bold tracking-tight">
+          OpsSync<span className="text-sky-600">.ai</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="ml-auto hidden items-center gap-5 text-slate-600 md:flex">
+          {navItems.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `transition hover:text-slate-900 ${isActive ? "text-slate-900" : ""}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+          <Link
+            to="/pricing"
+            className="rounded-xl bg-sky-600 px-4 py-2 font-medium text-white transition hover:bg-sky-700"
+          >
+            Start
+          </Link>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <a href="https://app.opssync.ai/login" className="text-sm hover:opacity-80">Log in</a>
-          <a href="https://app.opssync.ai/signup" className="btn-primary text-sm">Get Started</a>
-        </div>
+        {/* Mobile toggle */}
+        <button
+          className="ml-auto inline-flex items-center rounded-lg border px-3 py-2 text-slate-700 md:hidden"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <span className="i-menu h-4 w-4">☰</span>
+        </button>
       </div>
+
+      {/* Mobile panel */}
+      {open && (
+        <div className="border-t bg-white md:hidden">
+          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-3">
+            {navItems.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `rounded-lg px-2 py-2 transition hover:bg-slate-50 ${
+                    isActive ? "bg-slate-50 text-slate-900" : "text-slate-700"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+            <Link
+              to="/pricing"
+              onClick={() => setOpen(false)}
+              className="mt-1 rounded-xl bg-sky-600 px-4 py-2 text-center font-medium text-white transition hover:bg-sky-700"
+            >
+              Start
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

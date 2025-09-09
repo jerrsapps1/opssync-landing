@@ -1,53 +1,59 @@
 export default function Resources() {
-  const faqs = [
-    ['How do I invite new users?', 'Go to Settings → User Management → Invite.'],
-    ['How do payroll exports work?', 'CSV sync with Foundation Bookkeeping.'],
-    ['Can supervisors clock in offline?', 'Yes, auto-syncs when online.'],
-    ['What’s in project insights?', 'Trendlines, anomaly alerts, equipment usage.'],
-  ];
-  const templates = [
-    'Daily Project Log Template',
-    'Payroll CSV Export Sample',
-    'Equipment Assignment Sheet',
-    'OSHA Jobsite Safety Checklist',
-    'Employee Timecard QR Guide',
-  ];
-
   return (
-    <section className="section">
-      <div className="container-page space-y-10">
-        <header className="space-y-2">
-          <h2 className="text-3xl md:text-5xl font-bold">Resources</h2>
-          <p className="text-neutral-600">Guides, FAQs, and templates to help you get the most out of OpsSync.ai.</p>
-        </header>
+    <section className="mx-auto max-w-6xl px-6 py-12 space-y-10">
+      <header className="text-center">
+        <h1 className="text-4xl font-extrabold tracking-tight">Resources</h1>
+        <p className="mt-3 text-lg text-slate-600">
+          Guides and templates to help you run operations cleanly from day one.
+        </p>
+      </header>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="card p-6">
-            <div className="text-lg font-semibold mb-3">Help Center</div>
-            <ul className="text-sm space-y-2">
-              {faqs.map(([q, a]) => (
-                <li key={q}><span className="font-medium">{q}</span> — {a}</li>
-              ))}
-            </ul>
-          </div>
+      {/* Resource cards */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <a href="#" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition">
+          <div className="h-10 w-10 rounded-xl bg-sky-100 mb-4" />
+          <h3 className="text-lg font-semibold group-hover:underline">Supervisor Timekeeping Guide</h3>
+          <p className="mt-2 text-slate-600">Best practices for clean week-close with fewer corrections.</p>
+          <span className="mt-3 inline-block text-sm text-sky-700">Download PDF →</span>
+        </a>
 
-          <div className="card p-6">
-            <div className="text-lg font-semibold mb-3">Templates & Guides</div>
-            <ul className="text-sm space-y-2">
-              {templates.map((t) => (
-                <li key={t}><a href="#" className="link">{t}</a></li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <a href="#" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition">
+          <div className="h-10 w-10 rounded-xl bg-emerald-100 mb-4" />
+          <h3 className="text-lg font-semibold group-hover:underline">Crew & Equipment Board Template</h3>
+          <p className="mt-2 text-slate-600">A printable daily board for morning huddles.</p>
+          <span className="mt-3 inline-block text-sm text-sky-700">Download XLSX →</span>
+        </a>
 
-        <div className="card p-6">
-          <div className="text-lg font-semibold mb-2">Case Studies</div>
-          <ul className="text-sm space-y-2">
-            <li>Contractor A: From 10-hour payroll headaches to 30-minute exports</li>
-            <li>Contractor B: Improved equipment utilization by 15%</li>
-            <li>Contractor C: Supervisors adopted QR clock-ins in under a week</li>
-          </ul>
+        <a href="#" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition">
+          <div className="h-10 w-10 rounded-xl bg-indigo-100 mb-4" />
+          <h3 className="text-lg font-semibold group-hover:underline">Payroll Export Checklist</h3>
+          <p className="mt-2 text-slate-600">Ensure job/phase/cost code accuracy before export.</p>
+          <span className="mt-3 inline-block text-sm text-sky-700">Download PDF →</span>
+        </a>
+      </div>
+
+      {/* FAQ */}
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 className="text-xl font-semibold">FAQ</h3>
+        <div className="mt-4 space-y-4">
+          <details className="rounded-lg border border-slate-200 p-4">
+            <summary className="cursor-pointer font-medium">Can supervisors clock in on behalf of crews?</summary>
+            <p className="mt-2 text-slate-600">
+              Yes. OpsSync supports supervisor-led entries via QR, PIN, or manual add—with audit trails.
+            </p>
+          </details>
+          <details className="rounded-lg border border-slate-200 p-4">
+            <summary className="cursor-pointer font-medium">Do exports work with Foundation?</summary>
+            <p className="mt-2 text-slate-600">
+              Exports are formatted with job, phase, and cost code alignment for a clean import workflow.
+            </p>
+          </details>
+          <details className="rounded-lg border border-slate-200 p-4">
+            <summary className="cursor-pointer font-medium">How many users can I add?</summary>
+            <p className="mt-2 text-slate-600">
+              Start with a single seat and scale to tens or hundreds of users with role-based permissions.
+            </p>
+          </details>
         </div>
       </div>
     </section>
