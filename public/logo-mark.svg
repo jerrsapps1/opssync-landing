@@ -1,0 +1,93 @@
+<!-- public/logo-mark.svg — centered radar + shield + animated sweep -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <!-- Background: deep blue → purple -->
+    <linearGradient id="bg" x1="28" y1="20" x2="228" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D2A78"/>
+      <stop offset="1" stop-color="#5E31F6"/>
+    </linearGradient>
+
+    <!-- Ambient radar glow (centered) -->
+    <radialGradient id="radGlow" cx="0" cy="0" r="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0EA5E9" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring stroke gradient -->
+    <linearGradient id="ring" x1="-64" y1="-64" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#68D6FF"/>
+      <stop offset="1" stop-color="#6FEAD8"/>
+    </linearGradient>
+
+    <!-- Sweep wedge gradient (bright → transparent) -->
+    <linearGradient id="sweepGrad" x1="0" y1="0" x2="90" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0"  stop-color="#68D6FF" stop-opacity=".9"/>
+      <stop offset="1"  stop-color="#68D6FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Shield fill + stroke -->
+    <linearGradient id="shieldFill" x1="-40" y1="-64" x2="40" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0ECF9A"/>
+      <stop offset="1" stop-color="#079269"/>
+    </linearGradient>
+    <linearGradient id="shieldStroke" x1="-42" y1="-66" x2="42" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#39E2B4"/>
+      <stop offset="1" stop-color="#17B58A"/>
+    </linearGradient>
+
+    <!-- Soft shield glow -->
+    <filter id="shieldGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="2" y="2" width="252" height="252" rx="56" fill="url(#bg)"/>
+
+  <!-- Draw everything around the exact center (0,0) -->
+  <g transform="translate(128 128)">
+
+    <!-- Ambient glow -->
+    <circle r="96" fill="url(#radGlow)"/>
+
+    <!-- Shield (centered) -->
+    <ellipse rx="86" ry="60" fill="#12D1A0" opacity=".35" filter="url(#shieldGlow)"/>
+    <path d="M 0 -76 L 64 -40 V 24
+             C 64 52 36 76 0 90
+             C -36 76 -64 52 -64 24
+             V -40 Z"
+          fill="url(#shieldFill)" opacity=".9"/>
+    <path d="M 0 -76 L 64 -40 V 24
+             C 64 52 36 76 0 90
+             C -36 76 -64 52 -64 24
+             V -40 Z"
+          fill="none" stroke="url(#shieldStroke)" stroke-width="8" opacity=".95"/>
+
+    <!-- Radar rings (centered) -->
+    <g fill="none" stroke="url(#ring)" stroke-opacity=".9">
+      <circle r="64" stroke-width="4"/>
+      <circle r="44" stroke-width="3"/>
+      <circle r="24" stroke-width="2.5"/>
+    </g>
+
+    <!-- Rotating sweep (animated) -->
+    <g>
+      <!-- Group rotates 360° around center -->
+      <g>
+        <!-- soft wedge tail -->
+        <path d="M0 0 L90 0 L90 10 L0 0 Z" fill="url(#sweepGrad)" opacity=".75"/>
+        <!-- bright sweep edge -->
+        <line x1="0" y1="0" x2="90" y2="0" stroke="url(#ring)" stroke-width="6" stroke-linecap="round" opacity=".95"/>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Thinner check so radar stays visible -->
+    <path d="M -36 10 L -6 40 L 44 -16"
+          fill="none" stroke="#FFFFFF" stroke-width="14"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Hairline for crisp edges -->
+  <rect x="2.5" y="2.5" width="251" height="251" rx="55.5" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
+</svg>
