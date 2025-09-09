@@ -1,30 +1,50 @@
+// src/pages/Home.tsx
+import BrandMark from "@/components/BrandMark";
+
 export default function Home() {
   return (
     <section className="relative overflow-hidden">
+      {/* gradient background */}
       <div className="absolute inset-0 -z-10 bg-brand-gradient" />
+
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
+          {/* Text column */}
           <div>
-            <span className="inline-block rounded-full border px-3 py-1 text-xs font-medium text-sky-700 border-sky-200 bg-white dark:bg-slate-900 dark:text-sky-300 dark:border-slate-700">
-              New • Ops dashboards for crews &amp; payroll
-            </span>
+            {/* Brand badge with animated mark */}
+            <div className="flex items-center gap-3">
+              <BrandMark size={48} />
+              <span className="inline-block rounded-full border px-3 py-1 text-xs font-medium text-sky-700 border-sky-200 bg-white dark:bg-slate-900 dark:text-sky-300 dark:border-slate-700">
+                New • Ops dashboards for crews &amp; payroll
+              </span>
+            </div>
+
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
               Run construction ops <span className="text-brand-500">in sync</span>.
             </h1>
             <p className="mt-4 text-lg muted">
               OpsSync.ai keeps employees, equipment, timecards, and payroll aligned—so you finish jobs faster and bill cleanly.
             </p>
+
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/pricing" className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-brand-500 hover:bg-brand-600 transition ring-focus">
+              <a
+                href="/pricing"
+                className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-brand-500 hover:bg-brand-600 transition ring-focus"
+              >
                 Get started
               </a>
-              <a href="/features" className="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 ring-focus">
+              <a
+                href="/features"
+                className="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 ring-focus"
+              >
                 See features
               </a>
             </div>
+
             <p className="mt-3 text-sm muted">No cards or certificates here—pure ops &amp; payroll alignment.</p>
           </div>
 
+          {/* Mock UI card */}
           <div className="relative">
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between">
