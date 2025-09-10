@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-90" />
-      <div className="container-ss py-8 md:py-10">
+      <div className="container-ss py-6 md:py-8">
         <div className="grid items-center gap-6 md:grid-cols-2">
           <div>
             <h1>Plan crews &amp; equipment <span className="text-brand-500">in minutes</span>.</h1>
@@ -26,17 +26,17 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-3 grid grid-cols-3 gap-3">
-                <div className="card card-hover p-3">
+                <div className="card p-3">
                   <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
                   <p className="mt-1 text-[12px] font-medium">Drag &amp; Drop</p>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400">Visual day board</p>
                 </div>
-                <div className="card card-hover p-3">
+                <div className="card p-3">
                   <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
                   <p className="mt-1 text-[12px] font-medium">Filters</p>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400">Trade, certs, availability</p>
                 </div>
-                <div className="card card-hover p-3">
+                <div className="card p-3">
                   <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
                   <p className="mt-1 text-[12px] font-medium">Exports</p>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400">PDF / CSV snapshots</p>

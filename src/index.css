@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Global compact scale (similar to SafetySync) ===== */
+/* ===== Global compact scale (SafetySync-like) ===== */
 @layer base {
   html {
-    /* Compact but readable across pages */
-    font-size: 15px; /* Tailwind rem basis (was huge before) */
+    /* smaller root -> everything scales down */
+    font-size: 14px; /* was 15/16 */
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
@@ -15,18 +15,35 @@
   }
   body {
     @apply bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200;
+    line-height: 1.45;
   }
 
   /* Headings tuned down across the site */
-  h1 { @apply leading-tight font-bold; font-size: clamp(1.375rem, 2.1vw, 1.75rem); }  /* ~22–28px */
-  h2 { @apply leading-snug  font-semibold; font-size: clamp(1.125rem, 1.8vw, 1.375rem);} /* ~18–22px */
-  h3 { @apply leading-snug  font-semibold; font-size: clamp(1rem, 1.6vw, 1.25rem); }   /* ~16–20px */
+  h1 { /* ~19–23px depending on width */
+    @apply leading-tight font-bold;
+    font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+    letter-spacing: -0.01em;
+  }
+  h2 { /* ~16–19px */
+    @apply leading-snug font-semibold;
+    font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  }
+  h3 { /* ~14.5–16.5px */
+    @apply leading-snug font-semibold;
+    font-size: clamp(1.05rem, 1.25vw, 1.18rem);
+  }
 }
 
 /* ===== Utilities & shared components ===== */
 @layer components {
-  /* Narrower container (like SafetySync) */
-  .container-ss { @apply mx-auto max-w-5xl px-4; }
+  /* Narrow, consistent content width on all pages */
+  .container-ss {
+    max-width: 980px;   /* <— key: compact */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem;
+  }
 
   .muted { @apply text-slate-600 dark:text-slate-400; }
 
@@ -34,8 +51,6 @@
     @apply rounded-xl border border-slate-200 bg-white shadow-sm
            dark:border-slate-800 dark:bg-slate-900;
   }
-  .card-hover { @apply transition; }
-  .card-hover:hover { @apply shadow-md; }
 
   .ring-focus {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400
@@ -45,8 +60,8 @@
 
   .bg-brand-gradient {
     background:
-      radial-gradient(40rem 18rem at 10% -10%, rgba(14,165,233,.10), transparent),
-      radial-gradient(34rem 16rem at 90% -10%, rgba(6,182,212,.08), transparent),
+      radial-gradient(40rem 18rem at 10% -10%, rgba(14,165,233,.08), transparent),
+      radial-gradient(34rem 16rem at 90% -10%, rgba(6,182,212,.06), transparent),
       linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,0) 30%);
   }
 }
