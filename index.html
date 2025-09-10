@@ -5,23 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>OpsSync.ai — Crew & Equipment Board for Construction</title>
-    <meta name="description" content="OpsSync.ai is a drag-and-drop board to organize crews and equipment, track availability & certifications, avoid conflicts, and export daily plans." />
-    <meta name="theme-color" content="#0EA5E9" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+    <meta
+      name="description"
+      content="OpsSync.ai is a drag-and-drop board to organize crews and equipment, filter by trade/certs/availability, avoid conflicts, and export daily plans."
+    />
 
+    <!-- Prevent theme flash: set .dark on <html> before React loads -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved
+            ? saved === "dark"
+            : window.matchMedia &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Browser theme colors -->
+    <meta name="theme-color" content="#0EA5E9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph / Twitter -->
     <meta property="og:title" content="OpsSync.ai — Crew & Equipment Board for Construction" />
     <meta property="og:description" content="Drag-and-drop board to organize people & machines across projects. Filters, conflicts, and exports included." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Icons/manifest -->
     <link rel="icon" href="/logo-mark.svg" />
     <link rel="apple-touch-icon" href="/logo-mark.svg" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>
