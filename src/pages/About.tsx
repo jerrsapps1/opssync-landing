@@ -1,50 +1,38 @@
 export default function About() {
   return (
-    <section className="relative">
-      <div className="absolute inset-0 -z-10 bg-brand-gradient" />
-      <div className="mx-auto max-w-6xl px-6 py-14 space-y-10">
-        <header className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight">About OpsSync.ai</h1>
-          <p className="mt-3 text-lg muted">
-            We build practical tools for dispatchers, supers, and the yard—so planning the day is fast and clear.
-          </p>
-        </header>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">About OpsSync.ai</h1>
+      <p className="text-sm muted">
+        We’re builders from the field—streamlining operations so your crews can work, not wrestle software.
+      </p>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold">Our Focus</h2>
-            <p className="mt-2 muted">
-              A single source of truth for crews and equipment. Visual planning, useful filters, and clean exports—without the bloat.
-            </p>
-          </div>
-
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold">What We Value</h2>
-            <ul className="mt-2 list-disc pl-5 muted space-y-1">
-              <li>Speed over complexity</li>
-              <li>Clarity during morning huddles</li>
-              <li>Exportable plans the whole org can use</li>
-            </ul>
-          </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Our Mission</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Make planning people &amp; machines effortless</li>
+            <li>Keep projects on schedule and margins healthy</li>
+            <li>Clean, shareable daily plans—not bloat</li>
+          </ul>
         </div>
 
-        <div className="card p-6">
-          <h2 className="text-xl font-semibold">Roadmap</h2>
-          <div className="mt-4 space-y-4 muted">
-            <div>
-              <div className="font-medium">Q3 — Board Launch</div>
-              <div>Drag-and-drop day board, filters, conflicts, PDF/CSV exports</div>
-            </div>
-            <div>
-              <div className="font-medium">Q4 — Saved Views &amp; Templates</div>
-              <div>Personal/shared views, board templates, week view</div>
-            </div>
-            <div>
-              <div className="font-medium">Q1 — Utilization &amp; Alerts</div>
-              <div>Deeper utilization, conflict badges, optional daily email</div>
-            </div>
-          </div>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">What Makes Us Different</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Focused board for the field &amp; back office</li>
+            <li>Supervisor-first interactions</li>
+            <li>Exports your teams actually use</li>
+          </ul>
         </div>
+      </div>
+
+      <div className="card p-4">
+        <h2 className="text-base font-semibold">Roadmap Highlights</h2>
+        <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+          <li><span className="font-medium">Q3 — Core launch</span>: Board, filters, exports, basic insights</li>
+          <li><span className="font-medium">Q4 — Roles &amp; branding</span>: Org roles, refined exports</li>
+          <li><span className="font-medium">Q1 — Deeper analytics</span>: Idle time &amp; variance highlights</li>
+        </ul>
       </div>
     </section>
   );

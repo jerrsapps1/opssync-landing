@@ -1,79 +1,60 @@
 export default function Pricing() {
-  const tiers = [
-    {
-      name: "Solo",
-      subtitle: "One dispatcher or owner-operator.",
-      price: "$19", unit: "/mo",
-      features: ["1 seat", "Drag-and-drop day board", "Filters & search", "PDF/CSV exports"],
-      cta: "Choose Solo", featured: false,
-    },
-    {
-      name: "Team 5",
-      subtitle: "Core dispatch team.",
-      price: "$89", unit: "/mo",
-      features: ["5 seats", "All Solo features", "Saved views", "Basic conflict checks"],
-      cta: "Choose Team 5", featured: true, badge: "Most Popular",
-    },
-    {
-      name: "Team 10",
-      subtitle: "Multi-crew operations.",
-      price: "$159", unit: "/mo",
-      features: ["10 seats", "All Team 5 features", "Week view & snapshots", "Utilization hints"],
-      cta: "Choose Team 10", featured: false,
-    },
-    {
-      name: "Business 25",
-      subtitle: "Growing orgs that need scale.",
-      price: "$349", unit: "/mo",
-      features: ["25 seats", "All Team 10 features", "Shared templates", "Priority support"],
-      cta: "Choose Business 25", featured: false,
-    },
-  ];
+  const card = "card p-4 flex flex-col gap-3";
+  const li = "flex items-center gap-2 text-sm muted";
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12">
-      <header className="text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight">Pricing</h1>
-        <p className="mt-3 text-lg muted">Simple per-seat plans for the Crew &amp; Equipment Board.</p>
-      </header>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">Pricing</h1>
+      <p className="text-sm muted">Simple, per-user pricing. Start small and add users as you grow.</p>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {tiers.map(t => (
-          <div key={t.name} className={`card card-hover p-6 ${t.featured ? "border-2 border-brand-500" : ""}`}>
-            {t.badge && (
-              <div className="mb-2 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-slate-800/60 dark:text-brand-200">
-                {t.badge}
-              </div>
-            )}
-            <h3 className="text-xl font-semibold">{t.name}</h3>
-            <p className="mt-1 muted">{t.subtitle}</p>
+      <div className="grid gap-3 md:grid-cols-4">
+        <div className={card}>
+          <h2 className="text-base font-semibold">Solo</h2>
+          <div className="text-2xl font-extrabold">$29<span className="text-sm font-semibold">/mo</span></div>
+          <ul className="space-y-1">
+            <li className={li}>1 seat</li>
+            <li className={li}>Board &amp; filters</li>
+            <li className={li}>PDF / CSV exports</li>
+          </ul>
+          <a href="/contact" className="mt-2 inline-flex items-center rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700 ring-focus">Choose Solo</a>
+        </div>
 
-            <div className="mt-6">
-              <span className="text-4xl font-extrabold">{t.price}</span>
-              <span className="muted"> {t.unit}</span>
-            </div>
+        <div className={`${card} border-brand-500`}>
+          <div className="text-[11px] font-medium text-brand-500">Most Popular</div>
+          <h2 className="text-base font-semibold">Team (5 users)</h2>
+          <div className="text-2xl font-extrabold">$119<span className="text-sm font-semibold">/mo</span></div>
+          <ul className="space-y-1">
+            <li className={li}>5 seats</li>
+            <li className={li}>All Solo features</li>
+            <li className={li}>Roles &amp; permissions</li>
+          </ul>
+          <a href="/contact" className="mt-2 inline-flex items-center rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white hover:bg-brand-600 ring-focus">Choose Team</a>
+        </div>
 
-            <ul className="mt-6 flex-1 list-disc pl-5 space-y-2 muted">
-              {t.features.map(f => <li key={f}>{f}</li>)}
-            </ul>
+        <div className={card}>
+          <h2 className="text-base font-semibold">Crew (10 users)</h2>
+          <div className="text-2xl font-extrabold">$199<span className="text-sm font-semibold">/mo</span></div>
+          <ul className="space-y-1">
+            <li className={li}>10 seats</li>
+            <li className={li}>All Team features</li>
+            <li className={li}>Basic insights</li>
+          </ul>
+          <a href="/contact" className="mt-2 inline-flex items-center rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700 ring-focus">Choose Crew</a>
+        </div>
 
-            <a href="#" className={`ring-focus mt-6 inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition
-                ${t.featured
-                  ? "bg-brand-500 text-white hover:bg-brand-600"
-                  : "bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-white"
-                }`}>
-              {t.cta}
-            </a>
-          </div>
-        ))}
+        <div className={card}>
+          <h2 className="text-base font-semibold">Plus</h2>
+          <div className="text-2xl font-extrabold">$399<span className="text-sm font-semibold">/mo</span></div>
+          <ul className="space-y-1">
+            <li className={li}>20 seats</li>
+            <li className={li}>Org roles &amp; branding (soon)</li>
+            <li className={li}>Priority support</li>
+          </ul>
+          <a href="/contact" className="mt-2 inline-flex items-center rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700 ring-focus">Choose Plus</a>
+        </div>
       </div>
 
-      <div className="mt-10 card p-6 text-center">
-        <p className="muted">
-          Need more seats, multi-org, or custom exports?{" "}
-          <a className="text-brand-600 hover:underline" href="/contact">Contact us</a> for tailored plans.
-        </p>
-      </div>
+      <p className="text-xs muted">Need more seats or multi-org? <a href="/contact" className="underline">Contact us</a> for a custom plan.</p>
     </section>
   );
 }

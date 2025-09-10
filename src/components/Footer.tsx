@@ -1,54 +1,45 @@
-import { Link, NavLink } from "react-router-dom";
-import logoUrl from "/logo-opssync.svg";
-
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t dark:border-slate-700">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
-        <div>
-          <Link to="/" className="inline-flex items-center gap-2">
-            <img src={logoUrl} alt="OpsSync.ai" className="h-7 w-auto" />
-            <span className="sr-only">OpsSync.ai</span>
-          </Link>
-          <p className="mt-3 text-sm muted">
-            Crew & equipment board for construction and demolition teams.
+    <footer className="border-t py-8 text-sm">
+      <div className="container-capped grid gap-6 md:grid-cols-4">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <img src="/logo-opssync.svg" alt="OpsSync.ai" className="h-5 w-auto" />
+            <span className="text-sm font-semibold">OpsSync.ai</span>
+          </div>
+          <p className="text-xs text-slate-600 dark:text-slate-400">
+            Operations in sync for construction &amp; demo teams.
           </p>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold">Product</h4>
-          <ul className="mt-3 space-y-2 muted">
-            <li><NavLink to="/features" className="hover:text-slate-900 dark:hover:text-white">Features</NavLink></li>
-            <li><NavLink to="/pricing" className="hover:text-slate-900 dark:hover:text-white">Pricing</NavLink></li>
-            <li><NavLink to="/resources" className="hover:text-slate-900 dark:hover:text-white">Resources</NavLink></li>
+        <div className="space-y-2">
+          <h3 className="text-[13px] font-semibold">Product</h3>
+          <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-400">
+            <li><a href="/features" className="hover:underline">Features</a></li>
+            <li><a href="/pricing" className="hover:underline">Pricing</a></li>
+            <li><a href="/resources" className="hover:underline">Resources</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold">Company</h4>
-          <ul className="mt-3 space-y-2 muted">
-            <li><NavLink to="/about" className="hover:text-slate-900 dark:hover:text-white">About</NavLink></li>
-            <li><NavLink to="/contact" className="hover:text-slate-900 dark:hover:text-white">Contact</NavLink></li>
+        <div className="space-y-2">
+          <h3 className="text-[13px] font-semibold">Company</h3>
+          <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-400">
+            <li><a href="/about" className="hover:underline">About</a></li>
+            <li><a href="/contact" className="hover:underline">Contact</a></li>
+            <li><a href="/terms" className="hover:underline">Terms</a></li>
+            <li><a href="/privacy" className="hover:underline">Privacy</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold">Get Started</h4>
-          <p className="mt-3 text-sm muted">Start with your core crew—add users as you grow.</p>
-          <Link to="/pricing" className="mt-4 inline-flex rounded-xl bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-600 transition">
-            View Pricing
-          </Link>
+        <div className="space-y-2">
+          <h3 className="text-[13px] font-semibold">Get Started</h3>
+          <p className="text-xs text-slate-600 dark:text-slate-400">Start with your core crew—add users as you grow.</p>
+          <a href="/pricing" className="inline-flex rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white hover:bg-brand-600">View Pricing</a>
         </div>
       </div>
 
-      <div className="border-t dark:border-slate-700">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm muted md:flex-row">
-          <p>© {new Date().getFullYear()} OpsSync.ai. All rights reserved.</p>
-          <div className="flex gap-4">
-            <NavLink to="/terms" className="hover:text-slate-700 dark:hover:text-slate-200">Terms</NavLink>
-            <NavLink to="/privacy" className="hover:text-slate-700 dark:hover:text-slate-200">Privacy</NavLink>
-          </div>
-        </div>
+      <div className="container-capped mt-6 border-t pt-4 text-[11px] text-slate-500 dark:text-slate-400">
+        © 2025 OpsSync.ai. All rights reserved.
       </div>
     </footer>
   );

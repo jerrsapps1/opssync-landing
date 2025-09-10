@@ -1,85 +1,64 @@
 export default function Features() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12 space-y-12">
-      <header className="text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight">Features</h1>
-        <p className="mt-3 text-lg muted">
-          A focused board for people &amp; machines—fast to plan, clear to read.
-        </p>
-      </header>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">Features</h1>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Drag-and-Drop Board</h3>
-          <p className="mt-2 muted">Plan the day visually. Assign employees and equipment to projects with simple drag &amp; drop.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>Day &amp; week views</li>
-            <li>Project lanes</li>
-            <li>Saved board layouts</li>
+      <div className="grid gap-3 md:grid-cols-3">
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Employee &amp; Equipment Board</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Drag-and-drop crews and machines across projects</li>
+            <li>Filter by trade, certifications, attachments, availability</li>
+            <li>Quick conflict highlights and warnings</li>
+            <li>Daily board export (PDF / CSV)</li>
           </ul>
         </div>
 
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Filters &amp; Search</h3>
-          <p className="mt-2 muted">Find the right person or machine by trade, certifications, attachments, or availability window.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>Trade &amp; cert filters</li>
-            <li>Attachment &amp; power class</li>
-            <li>Availability ranges</li>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Filters &amp; Views</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Instant search, quick filters, saved views</li>
+            <li>Project-scoped or cross-project views</li>
+            <li>Snapshot previews for hand-off</li>
           </ul>
         </div>
 
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Conflicts &amp; Utilization</h3>
-          <p className="mt-2 muted">Spot double-booking and idle equipment early. Keep crews balanced across jobs.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>Double-book checks</li>
-            <li>Utilization hints</li>
-            <li>Simple conflict badges</li>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Roles &amp; Permissions</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Owner/admin, supervisor, and read-only roles</li>
+            <li>Granular project access controls</li>
+            <li>Audit of changes to the plan</li>
           </ul>
         </div>
 
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-amber-100 dark:bg-amber-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Snapshots &amp; Exports</h3>
-          <p className="mt-2 muted">Share the plan with the yard and the field—clean PDFs or CSVs of the current board.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>PDF board snapshots</li>
-            <li>CSV exports</li>
-            <li>Daily email option</li>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Project Insights</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Basic anomalies (over-booked, idle equipment)</li>
+            <li>Trend snapshots to keep jobs on schedule</li>
           </ul>
         </div>
 
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Saved Views</h3>
-          <p className="mt-2 muted">Create views per dispatcher, region, or project type and switch fast during morning huddles.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>Personal &amp; shared views</li>
-            <li>Quick filters</li>
-            <li>Keyboard shortcuts</li>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Exports</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Board to PDF for morning huddles</li>
+            <li>CSV for reporting or sharing</li>
           </ul>
         </div>
 
-        <div className="card card-hover p-6">
-          <div className="h-10 w-10 rounded-xl bg-rose-100 dark:bg-rose-900/40 mb-4" />
-          <h3 className="text-xl font-semibold">Branding &amp; White-Label</h3>
-          <p className="mt-2 muted">Use your logo and colors in the board and on exported PDFs.</p>
-          <ul className="mt-4 list-disc pl-5">
-            <li>Logo &amp; color theme</li>
-            <li>Report headers/footers</li>
-            <li>Multi-org friendly</li>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Branding (Soon)</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Logo and color accents</li>
+            <li>Headers/footers on exports</li>
           </ul>
         </div>
       </div>
 
-      <div className="card p-8 text-center">
-        <h2 className="text-2xl font-bold">Ready to organize your day?</h2>
-        <p className="mt-2 muted">Start with your core crew, add users as you grow.</p>
-        <a href="/pricing" className="ring-focus mt-4 inline-flex items-center rounded-xl bg-brand-500 px-5 py-3 font-medium text-white hover:bg-brand-600 transition">
+      <div className="mt-2">
+        <a href="/pricing" className="inline-flex items-center rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600 ring-focus">
           View Pricing
         </a>
       </div>
