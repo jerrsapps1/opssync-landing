@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
-import logoUrl from "/logo-opssync.svg";
+import BrandMark from "@/components/BrandMark";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // Smaller link/button sizing
   const linkBase =
     "block px-2 py-1 rounded-md text-[12px] font-medium transition hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800/60 dark:hover:text-white";
   const active =
@@ -14,46 +13,29 @@ export default function Navbar() {
   const inactive = "text-slate-600 dark:text-slate-300";
 
   return (
-    <nav className="sticky top-0 z-40 border-b bg-white/75 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/75">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-1.5">
-        {/* Brand: show ONLY the logo image (no duplicate text) */}
-        <Link to="/" className="flex items-center">
-          <img src={logoUrl} alt="OpsSync.ai" className="h-5 w-auto" />
-          <span className="sr-only">OpsSync.ai</span>
+    <nav className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80">
+      <div className="container-capped flex items-center justify-between py-1.5">
+        <Link to="/" className="flex items-center gap-2">
+          <BrandMark size={18} />
+          <span className="text-sm font-extrabold tracking-tight">OpsSync.ai</span>
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden items-center gap-1 md:flex">
-          <NavLink to="/features" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>
-            Features
-          </NavLink>
-          <NavLink to="/pricing" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>
-            Pricing
-          </NavLink>
-          <NavLink to="/resources" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>
-            Resources
-          </NavLink>
-          <NavLink to="/about" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>
-            About
-          </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>
-            Contact
-          </NavLink>
+          <NavLink to="/features"  className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Features</NavLink>
+          <NavLink to="/pricing"   className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Pricing</NavLink>
+          <NavLink to="/resources" className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Resources</NavLink>
+          <NavLink to="/about"     className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>About</NavLink>
+          <NavLink to="/contact"   className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Contact</NavLink>
 
-          {/* Slightly smaller toggle via scale */}
           <div className="mx-1 scale-90">
             <ThemeToggle />
           </div>
 
-          <Link
-            to="/pricing"
-            className="rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600"
-          >
+          <Link to="/pricing" className="rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600">
             Get started
           </Link>
         </div>
 
-        {/* Mobile menu button */}
         <button
           className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 md:hidden"
           onClick={() => setOpen(!open)}
@@ -66,25 +48,20 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile panel */}
       {open && (
-        <div className="border-t bg-white/85 px-3 py-2 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/85 md:hidden">
-          <div className="grid gap-1">
-            <NavLink to="/features" onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Features</NavLink>
-            <NavLink to="/pricing" onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Pricing</NavLink>
+        <div className="border-t bg-white/90 py-2 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/90 md:hidden">
+          <div className="container-capped grid gap-1">
+            <NavLink to="/features"  onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Features</NavLink>
+            <NavLink to="/pricing"   onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Pricing</NavLink>
             <NavLink to="/resources" onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Resources</NavLink>
-            <NavLink to="/about" onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>About</NavLink>
-            <NavLink to="/contact" onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Contact</NavLink>
+            <NavLink to="/about"     onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>About</NavLink>
+            <NavLink to="/contact"   onClick={() => setOpen(false)} className={({ isActive }) => `${linkBase} ${isActive ? active : inactive}`}>Contact</NavLink>
 
-            <div className="mt-2 scale-90">
+            <div className="mt-1 scale-90">
               <ThemeToggle />
             </div>
 
-            <Link
-              to="/pricing"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600"
-            >
+            <Link to="/pricing" onClick={() => setOpen(false)} className="mt-1 rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600">
               Get started
             </Link>
           </div>

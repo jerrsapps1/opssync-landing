@@ -1,10 +1,12 @@
+import BrandMark from "@/components/BrandMark";
+
 export default function Footer() {
   return (
     <footer className="border-t py-8 text-sm">
       <div className="container-capped grid gap-6 md:grid-cols-4">
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <img src="/logo-opssync.svg" alt="OpsSync.ai" className="h-5 w-auto" />
+            <BrandMark size={16} />
             <span className="text-sm font-semibold">OpsSync.ai</span>
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400">
@@ -33,8 +35,15 @@ export default function Footer() {
 
         <div className="space-y-2">
           <h3 className="text-[13px] font-semibold">Get Started</h3>
-          <p className="text-xs text-slate-600 dark:text-slate-400">Start with your core crew—add users as you grow.</p>
-          <a href="/pricing" className="inline-flex rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white hover:bg-brand-600">View Pricing</a>
+          <p className="text-xs text-slate-600 dark:text-slate-400">
+            Start with your core crew—add users as you grow.
+          </p>
+          <a
+            href="/pricing"
+            className="inline-flex rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white hover:bg-brand-600"
+          >
+            View Pricing
+          </a>
         </div>
       </div>
 
