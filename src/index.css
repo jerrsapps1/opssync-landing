@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Global compact scale (SafetySync-like) ===== */
+/* ===== Global compact scale ===== */
 @layer base {
   html {
-    /* smaller root -> everything scales down */
-    font-size: 14px; /* was 15/16 */
+    font-size: 13.5px; /* ⬅ smaller global scale (was 14/16) */
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
@@ -17,47 +16,37 @@
     @apply bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200;
     line-height: 1.45;
   }
-
-  /* Headings tuned down across the site */
-  h1 { /* ~19–23px depending on width */
-    @apply leading-tight font-bold;
-    font-size: clamp(1.35rem, 1.8vw, 1.65rem);
-    letter-spacing: -0.01em;
-  }
-  h2 { /* ~16–19px */
-    @apply leading-snug font-semibold;
-    font-size: clamp(1.15rem, 1.5vw, 1.35rem);
-  }
-  h3 { /* ~14.5–16.5px */
-    @apply leading-snug font-semibold;
-    font-size: clamp(1.05rem, 1.25vw, 1.18rem);
-  }
+  /* Headings */
+  h1 { @apply font-bold leading-tight; font-size: clamp(1.28rem, 1.7vw, 1.55rem); letter-spacing:-0.01em; }
+  h2 { @apply font-semibold leading-snug; font-size: clamp(1.12rem, 1.35vw, 1.28rem); }
+  h3 { @apply font-semibold leading-snug; font-size: clamp(1.02rem, 1.15vw, 1.12rem); }
 }
 
-/* ===== Utilities & shared components ===== */
 @layer components {
-  /* Narrow, consistent content width on all pages */
+  /* Narrow container like SafetySync */
   .container-ss {
-    max-width: 980px;   /* <— key: compact */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px */
-    padding-right: 1rem;
+    max-width: 980px;
+    margin-left: auto; margin-right: auto;
+    padding-left: 1rem; padding-right: 1rem;
   }
 
   .muted { @apply text-slate-600 dark:text-slate-400; }
+  .card  { @apply rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900; }
 
-  .card {
-    @apply rounded-xl border border-slate-200 bg-white shadow-sm
-           dark:border-slate-800 dark:bg-slate-900;
-  }
+  /* Small controls used everywhere */
+  .label    { @apply mb-1 text-[12px] font-medium text-slate-600 dark:text-slate-300; }
+  .input    { @apply w-full h-9 rounded-md border border-slate-300 bg-white px-2.5 text-[13px] text-slate-800 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white
+                       dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-offset-slate-900; }
+  .textarea { @apply w-full rounded-md border border-slate-300 bg-white p-2.5 text-[13px] text-slate-800 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white
+                       dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-offset-slate-900; }
 
-  .ring-focus {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400
-           focus-visible:ring-offset-2 focus-visible:ring-offset-white
-           dark:focus-visible:ring-offset-slate-900;
-  }
+  .btn        { @apply inline-flex items-center justify-center rounded-md px-3 py-1 text-[12px] font-medium transition; }
+  .btn-primary{ @apply btn text-white bg-sky-500 hover:bg-sky-600; }
+  .btn-ghost  { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800; }
 
+  /* Subtle header bg */
   .bg-brand-gradient {
     background:
       radial-gradient(40rem 18rem at 10% -10%, rgba(14,165,233,.08), transparent),
