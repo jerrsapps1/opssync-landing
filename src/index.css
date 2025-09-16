@@ -29,3 +29,8 @@ body { line-height: 1.6; }
   .shadow-card { @apply shadow-lg; }    /* adjust to taste */
   .shadow-medium { @apply shadow-md; }  /* adjust to taste */
 }
+
+@layer utilities {
+  .shadow-card { @apply shadow-lg; }
+  .shadow-medium { @apply shadow-md; }
+}
