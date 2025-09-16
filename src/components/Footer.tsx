@@ -1,47 +1,13 @@
-import BrandMark from "@/components/BrandMark";
-
 export default function Footer() {
   return (
-    <footer className="border-t py-6 text-sm">
-      <div className="container-ss grid gap-6 md:grid-cols-4">
-        <div className="space-y-1.5">
-          <div className="flex items-center gap-2">
-            <BrandMark size={16}/>
-            <span className="text-[13px] font-semibold">OpsSync.ai</span>
-          </div>
-          <p className="text-[12px] text-slate-600 dark:text-slate-400">
-            Operations in sync for construction &amp; demo teams.
-          </p>
+    <footer className="mt-16 border-t border-neutral-200">
+      <div className="container-page py-8 text-base flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="font-semibold">© {new Date().getFullYear()} OpsSync.ai</div>
+        <div className="text-neutral-700 flex gap-6">
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/pricing">Pricing</a>
         </div>
-
-        <div className="space-y-1.5">
-          <h3 className="text-[12px] font-semibold">Product</h3>
-          <ul className="space-y-1 text-[12px] text-slate-600 dark:text-slate-400">
-            <li><a href="/features"  className="hover:underline">Features</a></li>
-            <li><a href="/pricing"   className="hover:underline">Pricing</a></li>
-            <li><a href="/resources" className="hover:underline">Resources</a></li>
-          </ul>
-        </div>
-
-        <div className="space-y-1.5">
-          <h3 className="text-[12px] font-semibold">Company</h3>
-          <ul className="space-y-1 text-[12px] text-slate-600 dark:text-slate-400">
-            <li><a href="/about"   className="hover:underline">About</a></li>
-            <li><a href="/contact" className="hover:underline">Contact</a></li>
-            <li><a href="/terms"   className="hover:underline">Terms</a></li>
-            <li><a href="/privacy" className="hover:underline">Privacy</a></li>
-          </ul>
-        </div>
-
-        <div className="space-y-2">
-          <h3 className="text-[12px] font-semibold">Get Started</h3>
-          <p className="text-[12px] text-slate-600 dark:text-slate-400">Start with your core crew—add users as you grow.</p>
-          <a href="/pricing" className="btn btn-primary">View Pricing</a>
-        </div>
-      </div>
-
-      <div className="container-ss mt-5 border-t pt-3 text-[11px] text-slate-500 dark:text-slate-400">
-        © 2025 OpsSync.ai. All rights reserved.
       </div>
     </footer>
   );
