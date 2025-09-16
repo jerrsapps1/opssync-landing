@@ -1,36 +1,46 @@
+import SEO from "../components/SEO";
+
 export default function Features() {
+  const items = [
+    {
+      title: 'Employee & Equipment Board',
+      body: 'Drag-and-drop assignments, availability color-coding, supervisor vs. PM views, multi-project days.',
+    },
+    {
+      title: 'Timekeeping & Payroll',
+      body: 'Supervisor-led QR clock-ins, offline support with auto-sync, approval flows, Foundation CSV export.',
+    },
+    {
+      title: 'Project Insights',
+      body: 'Dashboards with trendlines for overtime and absenteeism, equipment usage, anomaly alerts.',
+    },
+    {
+      title: 'Notifications & Reporting',
+      body: 'Daily recap emails, weekly payroll-ready summaries, export to PDF/Excel.',
+    },
+  ];
+
   return (
-    <section className="container-ss py-8 md:py-10 space-y-6">
-      <h1>Features</h1>
-      <div className="grid gap-3 md:grid-cols-3">
-        <div className="card p-4">
-          <h2>Employee &amp; Equipment Board</h2>
-          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
-            <li>Drag-and-drop across projects</li>
-            <li>Filter by trade, certs, attachments, availability</li>
-            <li>Quick conflict highlights</li>
-            <li>Daily export (PDF / CSV)</li>
-          </ul>
-        </div>
-        <div className="card p-4">
-          <h2>Filters &amp; Views</h2>
-          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
-            <li>Instant search, quick filters, saved views</li>
-            <li>Project-scoped or cross-project views</li>
-            <li>Snapshot previews for hand-off</li>
-          </ul>
-        </div>
-        <div className="card p-4">
-          <h2>Roles &amp; Permissions</h2>
-          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
-            <li>Owner/admin, supervisor, read-only</li>
-            <li>Granular project access</li>
-            <li>Change log</li>
-          </ul>
+    <section className="section">
+      <SEO
+        title="OpsSync.ai — Features"
+        description="Employee & equipment board, timekeeping & payroll, project insights, notifications & reporting."
+        path="/features"
+      />
+      <div className="container-page space-y-8">
+        <header className="space-y-2">
+          <h2 className="text-3xl md:text-5xl font-bold">Features</h2>
+          <p className="text-neutral-600">Built for construction & demolition operations.</p>
+        </header>
+        <div className="grid md:grid-cols-2 gap-6">
+          {items.map((it) => (
+            <div key={it.title} className="card p-6">
+              <div className="text-lg font-semibold mb-2">{it.title}</div>
+              <p className="text-sm text-neutral-700">{it.body}</p>
+            </div>
+          ))}
         </div>
       </div>
-
-      <a href="/pricing" className="inline-flex items-center rounded-md bg-brand-500 px-3 py-1 text-[12px] font-medium text-white hover:bg-brand-600 ring-focus">View Pricing</a>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
@@ -8,7 +9,6 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      // TODO: connect to your real endpoint (Formspree/Resend/API)
       await new Promise((res) => setTimeout(res, 600));
       setForm({ name: "", company: "", email: "", message: "" });
       setStatus("sent");
@@ -20,6 +20,11 @@ export default function Contact() {
 
   return (
     <section className="section">
+      <SEO
+        title="OpsSync.ai — Contact"
+        description="Get in touch with the OpsSync.ai team."
+        path="/contact"
+      />
       <div className="container-page grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">Let’s streamline your operations</h2>
@@ -28,40 +33,19 @@ export default function Contact() {
         </div>
 
         <form onSubmit={onSubmit} className="card p-6 space-y-4">
-          <input
-            className="w-full rounded-lg px-3 py-2 border border-neutral-200"
-            placeholder="Name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            required
-          />
-          <input
-            className="w-full rounded-lg px-3 py-2 border border-neutral-200"
-            placeholder="Company"
-            value={form.company}
-            onChange={(e) => setForm({ ...form, company: e.target.value })}
-          />
-          <input
-            type="email"
-            className="w-full rounded-lg px-3 py-2 border border-neutral-200"
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            required
-          />
-          <textarea
-            className="w-full rounded-lg px-3 py-2 border border-neutral-200"
-            rows={5}
-            placeholder="Message"
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            required
-          />
-          <button type="submit" className="btn-primary disabled:opacity-60" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Send message"}
+          <input className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Name"
+            value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
+          <input className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Company"
+            value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
+          <input type="email" className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Email"
+            value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
+          <textarea className="w-full rounded-lg px-3 py-2 border border-neutral-200" rows={5} placeholder="Message"
+            value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required />
+          <button type="submit" className="btn-primary disabled:opacity-60" disabled={status==="sending"}>
+            {status==="sending" ? "Sending..." : "Send message"}
           </button>
-          {status === "sent" && <div className="text-green-600 text-sm">Thanks! We’ll be in touch.</div>}
-          {status === "error" && <div className="text-red-600 text-sm">Something went wrong. Try again.</div>}
+          {status==="sent" && <div className="text-green-600 text-sm">Thanks! We’ll be in touch.</div>}
+          {status==="error" && <div className="text-red-600 text-sm">Something went wrong. Try again.</div>}
         </form>
       </div>
     </section>
