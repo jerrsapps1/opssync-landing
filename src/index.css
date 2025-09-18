@@ -62,3 +62,9 @@ body { background: var(--bg); color: var(--text); font-family: Inter, ui-sans-se
   box-shadow: 0 6px 18px rgba(2,6,23,0.12);
 }
 .ring-focus { outline: none; box-shadow: 0 0 0 2px color-mix(in hsl, var(--grad-start) 55%, transparent); }
+
+/* --- Compatibility: ensure legacy shadow utilities exist --- */
+@layer utilities {
+  .shadow-card { @apply shadow-lg; }
+  .shadow-medium { @apply shadow-md; }
+}
