@@ -1,20 +1,38 @@
-import SEO from "../components/SEO";
-
 export default function About() {
   return (
-    <section className="section">
-      <SEO
-        title="OpsSync.ai — About"
-        description="Built for field ops reality. We streamline construction & demolition operations."
-        path="/about"
-      />
-      <div className="container-page prose prose-neutral max-w-none">
-        <h2>Built for field ops reality</h2>
-        <p>OpsSync.ai streamlines construction & demolition operations with modern software that fits how crews actually work.</p>
-        <h3>Team</h3>
-        <p>Placeholder bios for leadership focused on safety, operations, and product.</p>
-        <h3>Careers</h3>
-        <p>We hire operators and builders. Sample roles: Project Specialist, Customer Success Manager.</p>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">About OpsSync.ai</h1>
+      <p className="text-sm muted">
+        We’re builders from the field—streamlining operations so your crews can work, not wrestle software.
+      </p>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Our Mission</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Make planning people &amp; machines effortless</li>
+            <li>Keep projects on schedule and margins healthy</li>
+            <li>Clean, shareable daily plans—not bloat</li>
+          </ul>
+        </div>
+
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">What Makes Us Different</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+            <li>Focused board for the field &amp; back office</li>
+            <li>Supervisor-first interactions</li>
+            <li>Exports your teams actually use</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="card p-4">
+        <h2 className="text-base font-semibold">Roadmap Highlights</h2>
+        <ul className="mt-2 list-disc pl-5 text-sm muted space-y-1">
+          <li><span className="font-medium">Q3 — Core launch</span>: Board, filters, exports, basic insights</li>
+          <li><span className="font-medium">Q4 — Roles &amp; branding</span>: Org roles, refined exports</li>
+          <li><span className="font-medium">Q1 — Deeper analytics</span>: Idle time &amp; variance highlights</li>
+        </ul>
       </div>
     </section>
   );
