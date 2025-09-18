@@ -1,62 +1,67 @@
-// src/pages/Terms.tsx
+import React from "react";
+
 export default function Terms() {
-  const lastUpdated = new Date().toISOString().slice(0, 10);
-
   return (
-    <section className="mx-auto max-w-4xl px-6 py-12 space-y-6">
-      <h1 className="text-4xl font-extrabold tracking-tight">Terms of Service</h1>
-      <p className="muted">Last updated: {lastUpdated}</p>
+    <main className="container-page section">
+      <header className="mb-8">
+        <h1 className="text-4xl font-extrabold tracking-tight">Terms of Service</h1>
+        <p className="mt-2 text-neutral-600">
+          Last updated: {new Date().toLocaleDateString()}
+        </p>
+      </header>
 
-      <div className="card p-6 space-y-4">
-        <p className="muted">
-          These Terms govern your access to and use of OpsSync.ai’s Crew &amp; Equipment Board (the “Service”).
-          By using the Service, you agree to these Terms. If you are agreeing on behalf of an organization,
-          you represent you have authority to bind it.
+      <div className="prose prose-neutral max-w-none">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing or using OpsSync.ai, you agree to be bound by these Terms
+          of Service and our Privacy Policy. If you do not agree, do not use the
+          Service.
         </p>
 
-        <h2 className="text-xl font-semibold">1. Accounts &amp; Access</h2>
-        <ul className="list-disc pl-5 muted space-y-1">
-          <li>You are responsible for the activity under your account and for maintaining password security.</li>
-          <li>Provide accurate registration information and keep it current.</li>
-        </ul>
-
-        <h2 className="text-xl font-semibold">2. Permitted Use</h2>
-        <ul className="list-disc pl-5 muted space-y-1">
-          <li>Use the Service to plan and organize crews, equipment, and projects.</li>
-          <li>No reverse engineering, scraping, interfering with security, or unauthorized access.</li>
-          <li>Do not upload unlawful content or content you do not have the right to share.</li>
-        </ul>
-
-        <h2 className="text-xl font-semibold">3. Your Content</h2>
-        <p className="muted">
-          You retain ownership of content you submit. You grant OpsSync.ai a limited license to host, process,
-          and display that content solely to provide the Service to you.
+        <h2>2. Use of the Service</h2>
+        <p>
+          You may use the Service only in compliance with applicable laws and these
+          Terms. You are responsible for maintaining the confidentiality of your
+          account credentials and for all activities that occur under your account.
         </p>
 
-        <h2 className="text-xl font-semibold">4. Plans &amp; Billing</h2>
-        <p className="muted">
-          Paid plans are billed in advance per the pricing page. Fees are non-refundable except where required by law.
-          We may adjust pricing or features with notice; changes apply on renewal or as otherwise stated.
+        <h2>3. Subscription & Billing</h2>
+        <p>
+          Some features require a paid subscription. Fees are billed in advance and
+          are non-refundable except as required by law or explicitly stated.
         </p>
 
-        <h2 className="text-xl font-semibold">5. Confidentiality &amp; Security</h2>
-        <p className="muted">
-          We implement reasonable administrative, technical, and physical safeguards to protect your content.
-          See our Privacy Policy for details.
+        <h2>4. Intellectual Property</h2>
+        <p>
+          The Service, including all content, features, and functionality, are owned
+          by OpsSync.ai or its licensors and are protected by applicable laws.
         </p>
 
-        <h2 className="text-xl font-semibold">6. Service Changes</h2>
-        <p className="muted">
-          We may update or discontinue features from time to time. If a change materially reduces core board
-          functionality for a paid plan, we will provide notice.
+        <h2>5. Limitation of Liability</h2>
+        <p>
+          To the fullest extent permitted by law, OpsSync.ai shall not be liable for
+          any indirect, incidental, special, consequential, or punitive damages, or any
+          loss of profits or revenues, whether incurred directly or indirectly, or any
+          loss of data, use, goodwill, or other intangible losses.
         </p>
 
-        <h2 className="text-xl font-semibold">7. Disclaimers</h2>
-        <p className="muted">
-          THE SERVICE IS PROVIDED “AS IS.” To the fullest extent permitted by law, we disclaim warranties of
-          merchantability, fitness for a particular purpose, and non-infringement. You are responsible for how
-          you use outputs and exports.
+        <h2>6. Termination</h2>
+        <p>
+          We may suspend or terminate your access to the Service at any time, with or
+          without cause or notice, if we believe you have violated these Terms.
         </p>
 
-        <h2 className="text-xl font-semibold">8. Limitation of Liability</h2>
-        <p className=
+        <h2>7. Changes to Terms</h2>
+        <p>
+          We may modify these Terms from time to time. The updated Terms will be posted
+          on this page with a revised “Last updated” date.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+          Questions? Contact us at <a href="mailto:support@opssync.ai">support@opssync.ai</a>.
+        </p>
+      </div>
+    </main>
+  );
+}
