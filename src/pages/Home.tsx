@@ -1,57 +1,63 @@
-import SEO from "../components/SEO";
-
 export default function Home() {
   return (
-    <>
-      <SEO
-        title="OpsSync.ai — Single source of truth for field operations"
-        description="Simplify timekeeping, payroll, and equipment management with one platform."
-        path="/"
-      />
-      <section className="section">
-        <div className="container-page grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-5">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              <span className="text-gradient">The single source of truth</span> for your field operations.
-            </h1>
-            <p className="text-lg text-neutral-700">
-              Simplify timekeeping, payroll, and equipment management with one platform.
-            </p>
-            <div className="flex gap-3">
-              <a href="https://app.opssync.ai/signup" className="btn-primary">Get Started</a>
-              <a href="/features" className="link">See features</a>
-            </div>
-          </div>
-          <div className="card min-h-[260px] flex items-center justify-center text-neutral-500">
-            Product preview
-          </div>
-        </div>
-      </section>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-90" />
 
-      <section className="section">
-        <div className="container-page grid md:grid-cols-3 gap-6">
-          {[
-            { title: 'Employee & Equipment Board', desc: 'Assign crews and machines in seconds.' },
-            { title: 'Timekeeping & Payroll', desc: 'Supervisor-led QR clock-ins, payroll-ready exports.' },
-            { title: 'Project Insights', desc: 'AI-powered trends for hours, costs, and utilization.' },
-          ].map((f) => (
-            <div key={f.title} className="card p-6">
-              <div className="font-semibold mb-1">{f.title}</div>
-              <p className="text-sm text-neutral-600">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container-page card p-8 flex items-center justify-between flex-wrap gap-4">
+      <div className="container-capped py-8 md:py-10">
+        <div className="grid items-center gap-6 md:grid-cols-2">
           <div>
-            <div className="text-lg font-semibold">Ready to streamline payroll and ops?</div>
-            <p className="text-sm text-neutral-600">Start your free trial today.</p>
+            <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">
+              Plan crews &amp; equipment <span className="text-brand-500">in minutes</span>.
+            </h1>
+            <p className="mt-2 text-sm muted">
+              A focused board for people &amp; machines—drag, drop, filter, avoid conflicts, and export the daily plan.
+              Built for construction &amp; demo operations.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              <a href="/pricing" className="inline-flex items-center justify-center rounded-md px-3 py-1 text-xs text-white bg-brand-500 hover:bg-brand-600 transition ring-focus">
+                Get started
+              </a>
+              <a href="/features" className="inline-flex items-center justify-center rounded-md px-3 py-1 text-xs border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 ring-focus">
+                See features
+              </a>
+            </div>
           </div>
-          <a href="https://app.opssync.ai/signup" className="btn-primary">Start Free Trial</a>
+
+          <div className="relative">
+            <div className="card p-2.5 md:p-3">
+              <div className="flex items-center justify-between">
+                <div className="h-2 w-16 rounded bg-slate-100 dark:bg-slate-800" />
+                <div className="flex gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700" />
+                </div>
+              </div>
+
+              <div className="mt-2.5 grid grid-cols-3 gap-2.5">
+                <div className="card card-hover p-2.5">
+                  <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
+                  <p className="mt-1 text-[12px] font-medium">Drag &amp; Drop</p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">Visual day board</p>
+                </div>
+                <div className="card card-hover p-2.5">
+                  <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
+                  <p className="mt-1 text-[12px] font-medium">Filters</p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">Trade, certs, availability</p>
+                </div>
+                <div className="card card-hover p-2.5">
+                  <div className="h-16 rounded bg-slate-50 dark:bg-slate-800" />
+                  <p className="mt-1 text-[12px] font-medium">Exports</p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">PDF / CSV snapshots</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pointer-events-none absolute -inset-10 -z-10 opacity-25 blur-3xl bg-gradient-to-tr from-sky-200 via-cyan-100 to-transparent dark:from-sky-900/30 dark:via-cyan-900/20 dark:to-transparent" />
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

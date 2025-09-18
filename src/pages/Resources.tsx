@@ -1,60 +1,26 @@
-import SEO from "../components/SEO";
-
 export default function Resources() {
-  const faqs = [
-    ['How do I invite new users?', 'Go to Settings → User Management → Invite.'],
-    ['How do payroll exports work?', 'CSV sync with Foundation Bookkeeping.'],
-    ['Can supervisors clock in offline?', 'Yes, auto-syncs when online.'],
-    ['What’s in project insights?', 'Trendlines, anomaly alerts, equipment usage.'],
-  ];
-  const templates = [
-    'Daily Project Log Template',
-    'Payroll CSV Export Sample',
-    'Equipment Assignment Sheet',
-    'OSHA Jobsite Safety Checklist',
-    'Employee Timecard QR Guide',
-  ];
-
   return (
-    <section className="section">
-      <SEO
-        title="OpsSync.ai — Resources"
-        description="Guides, FAQs, and templates to help you get the most out of OpsSync.ai."
-        path="/resources"
-      />
-      <div className="container-page space-y-10">
-        <header className="space-y-2">
-          <h2 className="text-3xl md:text-5xl font-bold">Resources</h2>
-          <p className="text-neutral-600">Guides, FAQs, and templates to help you get the most out of OpsSync.ai.</p>
-        </header>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">Resources</h1>
+      <p className="text-sm muted">Guides and templates to help you run clean daily operations from day one.</p>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="card p-6">
-            <div className="text-lg font-semibold mb-3">Help Center</div>
-            <ul className="text-sm space-y-2">
-              {faqs.map(([q, a]) => (
-                <li key={q}><span className="font-medium">{q}</span> — {a}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="card p-6">
-            <div className="text-lg font-semibold mb-3">Templates & Guides</div>
-            <ul className="text-sm space-y-2">
-              {templates.map((t) => (
-                <li key={t}><a href="#" className="link">{t}</a></li>
-              ))}
-            </ul>
-          </div>
+      <div className="grid gap-3 md:grid-cols-3">
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Crew &amp; Equipment Board Template</h2>
+          <p className="mt-1 text-sm muted">A printable daily board for morning huddles.</p>
+          <a className="mt-2 inline-flex rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700" href="#">Download XLSX →</a>
         </div>
 
-        <div className="card p-6">
-          <div className="text-lg font-semibold mb-2">Case Studies</div>
-          <ul className="text-sm space-y-2">
-            <li>Contractor A: From 10-hour payroll headaches to 30-minute exports</li>
-            <li>Contractor B: Improved equipment utilization by 15%</li>
-            <li>Contractor C: Supervisors adopted QR clock-ins in under a week</li>
-          </ul>
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">Daily Plan PDF</h2>
+          <p className="mt-1 text-sm muted">Share the day’s assignments with the field.</p>
+          <a className="mt-2 inline-flex rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700" href="#">Download PDF →</a>
+        </div>
+
+        <div className="card p-4">
+          <h2 className="text-base font-semibold">CSV Import Mapping</h2>
+          <p className="mt-1 text-sm muted">Prep your data for quick onboarding.</p>
+          <a className="mt-2 inline-flex rounded-md bg-slate-900 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700" href="#">Download CSV →</a>
         </div>
       </div>
     </section>

@@ -1,52 +1,36 @@
-import { useState } from "react";
-import SEO from "../components/SEO";
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      await new Promise((res) => setTimeout(res, 600));
-      setForm({ name: "", company: "", email: "", message: "" });
-      setStatus("sent");
-      setTimeout(() => setStatus("idle"), 2500);
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
-    <section className="section">
-      <SEO
-        title="OpsSync.ai — Contact"
-        description="Get in touch with the OpsSync.ai team."
-        path="/contact"
-      />
-      <div className="container-page grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">Let’s streamline your operations</h2>
-          <p className="text-neutral-700">Tell us about your crew size and current tools.</p>
-          <div className="text-base">support@opssync.ai • (555) 123-4567</div>
-        </div>
+    <section className="container-capped py-8 md:py-10 space-y-6">
+      <h1 className="text-2xl font-bold tracking-tight md:text-[26px]">Contact</h1>
+      <p className="text-sm muted">Questions about pricing, onboarding, or exports? We’ll help you get set up.</p>
 
-        <form onSubmit={onSubmit} className="card p-6 space-y-4">
-          <input className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Name"
-            value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
-          <input className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Company"
-            value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
-          <input type="email" className="w-full rounded-lg px-3 py-2 border border-neutral-200" placeholder="Email"
-            value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
-          <textarea className="w-full rounded-lg px-3 py-2 border border-neutral-200" rows={5} placeholder="Message"
-            value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required />
-          <button type="submit" className="btn-primary disabled:opacity-60" disabled={status==="sending"}>
-            {status==="sending" ? "Sending..." : "Send message"}
+      <div className="grid gap-3 md:grid-cols-2">
+        <form className="card p-4 space-y-3">
+          <label className="text-sm">Name
+            <input className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" />
+          </label>
+          <label className="text-sm">Email
+            <input className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" />
+          </label>
+          <label className="text-sm">Company
+            <input className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" />
+          </label>
+          <label className="text-sm">Message
+            <textarea rows={4} className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" />
+          </label>
+          <button type="button" className="rounded-md bg-brand-500 px-3 py-1 text-xs font-medium text-white hover:bg-brand-600">
+            Send message
           </button>
-          {status==="sent" && <div className="text-green-600 text-sm">Thanks! We’ll be in touch.</div>}
-          {status==="error" && <div className="text-red-600 text-sm">Something went wrong. Try again.</div>}
+          <p className="text-[11px] muted">This is a demo form. We’ll connect it to your backend/email when you’re ready.</p>
         </form>
+
+        <div className="card p-4 space-y-2">
+          <h2 className="text-base font-semibold">OpsSync.ai</h2>
+          <p className="text-sm muted">Built for construction &amp; demolition operations—so your field and back office stay in sync.</p>
+          <p className="text-sm"><span className="muted">Email:</span> hello@opssync.ai</p>
+          <p className="text-sm"><span className="muted">Support:</span> support@opssync.ai</p>
+          <p className="text-sm"><span className="muted">Hours:</span> Mon–Fri, 8am–6pm CT</p>
+        </div>
       </div>
     </section>
   );
